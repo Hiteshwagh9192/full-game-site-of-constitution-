@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hexabyte Login</title>
+    <style>
+        /* Login Page Styles */
+        .login-container {
+            display: none;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-image: url('https://img.freepik.com/free-photo/india-republic-day-celebration-digital-art-with-flag_23-2151070933.jpg?size=626&ext=jpg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            position: relative;
+        }
+        .login-box {
+            background-color: rgba(0, 0, 0, 0.7);
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
+            width: 300px;
+            text-align: center;
+        }
+        .login-box h1 {
+            color: white;
+            margin-bottom: 20px;
+            font-size: 40px;
+        }
+        .login-box h2 {
+            color: white;
+            margin-bottom: 20px;
+        }
+        .input-field {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: none;
+            border-radius: 5px;
+        }
+        .submit-btn {
+            width: 100%;
+            padding: 10px;
+            margin: 20px 0;
+            background-color: #ff9c00;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .submit-btn:hover {
+            background-color: #ff7f00;
+        }
+        .book-shop-btn {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            padding: 10px 20px;
+            background-color: #ff9c00;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            text-decoration: none;
+            text-align: center;
+        }
+        .book-shop-btn:hover {
+            background-color: #ff7f00;
+        }
+
+        /* Video Ad Styles */
+        .video-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: black;
+            position: relative;
+        }
+        .skip-btn {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            padding: 10px 20px;
+            background-color: #ff9c00;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        .skip-btn:hover {
+            background-color: #ff7f00;
+        }
+        
+        /* Main Page Styles */
+        .main-content {
+            display: none;
+            height: 100vh;
+            background-image: url('https://img.freepik.com/premium-photo/black-white-photo-circular-object-with-blue-ribbon_994023-105462.jpg?size=626&ext=jpg');
+            background-size: cover;
+            background-position: center;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            height: 100vh;
+            justify-content: center;
+            gap: 20px; /* Space between the title and button container */
+        }
+        .title-img {
+            display: block;
+            max-width: 100%;
+            height: auto;
+        }
+        .button-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 20px;
+            max-width: 800px;
+        }
+        .button {
+            padding: 15px 30px;
+            font-size: 20px;
+            border: 2px solid white;
+            background-color: rgba(0, 0, 0, 0.2);
+            color: white;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        .button:hover {
+            background-color: rgba(255, 255, 255, 0.3);
+        }
+        .interesting {
+            font-size: 18px;
+            color: #fff;
+            background-color: rgba(0, 0, 0, 0.6);
+            padding: 10px 20px;
+            border-radius: 10px;
+            text-align: center;
+            position: absolute;
+            bottom: 10%;
+            left: 50%;
+            transform: translateX(-50%);
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.8);
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Video Ad Page -->
+    <div class="video-container" id="adPage">
+        <iframe width="560" height="315" src="https://drive.google.com/file/d/1MDZ9MOA0Rcg32omgMh43f8G00vG3BQNt/preview" frameborder="0" allow="autoplay"></iframe>
+        <button class="skip-btn" onclick="skipAd()">Skip Ad</button>
+    </div>
+
+    <!-- Login Page -->
+    <div class="login-container" id="loginPage">
+        <a href="https://zacey.mini.store/" class="book-shop-btn">Book Shop</a>
+        <div class="login-box">
+            <h1>Hexabyte</h1>
+            <h2>Login</h2>
+            <form id="loginForm">
+                <input type="text" id="name" class="input-field" placeholder="Enter your name" required><br>
+                <input type="tel" id="mobile" class="input-field" placeholder="Enter mobile number" required><br>
+                <input type="password" id="password" class="input-field" placeholder="Set password" required><br>
+                <button type="submit" class="submit-btn">Submit</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Main Page -->
+    <div class="main-content" id="mainPage">
+        <div class="container">
+            <img src="https://www.educandy.com/site/images/image_app_studio.png" alt="Educandy" class="title-img">
+            <div class="button-container">
+                <button class="button" onclick="location.href='https://techace7.godaddysites.com/'">Bed Time Story</button>
+                <button class="button" onclick="location.href='https://hiteshwagh9192.github.io/sih-law-game-/gg.html'">Yes or No</button>
+                <button class="button" onclick="location.href='https://www.educandy.com/site/html5/bin/main.php?activity=multiple_pairs&quizid=1010559'">Multiple Choice</button>
+                <button class="button" onclick="location.href='https://www.educandy.com/site/html5/bin/main.php?activity=crosswords&quizid=1010559'">Crossword</button>
+                <button class="button" onclick="location.href='https://www.educandy.com/site/html5/bin/main.php?activity=matchup&quizid=1010559'">Match Up</button>
+                <button class="button" onclick="location.href='https://www.educandy.com/site/html5/bin/main.php?activity=memory&quizid=1010559'">Memory</button>
+                <button class="button" id="upcoming">Upcoming Game</button>
+            </div>
+            <div class="interesting">
+                "Explore the maze, discover the games, and get ready for the future!"
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Function to skip the ad and show the login page
+        function skipAd() {
+            document.getElementById('adPage').style.display = 'none';
+            document.getElementById('loginPage').style.display = 'flex';
+        }
+
+        document.getElementById('loginForm').addEventListener('submit', function(event) {
+            event.preventDefault(); // Prevent form from submitting
+
+            const name = document.getElementById('name').value;
+            const mobile = document.getElementById('mobile').value;
+            const password = document.getElementById('password').value;
+
+            if (name && mobile && password) {
+                document.getElementById('loginPage').style.display = 'none';
+                document.getElementById('mainPage').style.display = 'block';
+            } else {
+                alert('Please fill in all fields');
+            }
+        });
+    </script>
+
+</body>
+</html>
